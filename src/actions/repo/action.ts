@@ -26,7 +26,7 @@ async function GetSearchQueries(query: string, responseSummary: string) {
       },
       {
         role: "user",
-        content: `You are a github search bot that formulates 5 relevant search url queries on github filtering by search query which must be varied each time, the query is: ${query} and the relevant project is ${responseSummary}, using the endpoint https://api.github.com/search/repositories?q=`,
+        content: `You are a github search bot that formulates 5 relevant search url queries on github filtering by search query which must be varied each time, be sure to include the stack in the query such as react or nextjs the query is: ${query} and the relevant project is ${responseSummary}, using the endpoint https://api.github.com/search/repositories?q=`,
       },
     ],
     temperature: 0.1,

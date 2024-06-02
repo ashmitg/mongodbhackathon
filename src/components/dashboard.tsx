@@ -16,6 +16,17 @@ import { TextToObj } from "@/actions/gptobj/page";
 import { Loader2 } from "lucide-react";
 import { fetchReadme } from "@/actions/repo/action";
 import { GetResults } from "@/actions/lang/action";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 export function Dashboard() {
   const [GHurl, SetGHurl] = useState("");
@@ -45,17 +56,19 @@ export function Dashboard() {
       await fetchReadme(res);
 
       SetrepoData(res);
-    } catch (error) {
-      console.log(error);
-    } finally {
+
+      // Use responseSummary directly here instead of summaryData
       let responseRepos = await GetResults(
-        `The user is trying to make add this feature: ${ProjectReqs} with the compatible recommended tech stack being${summaryData}, list open source projects user can use with the proper github link`,
+        `The user is trying to make add this feature: ${ProjectReqs} with the compatible recommended tech stack being ${responseSummary}, list open source projects user can use with the proper github link`,
         "Readme"
       );
 
       let convert = await TextToObj(responseRepos);
       setrecObj(JSON.parse(convert));
       console.log(convert);
+    } catch (error) {
+      console.log(error);
+    } finally {
       SetloadingRepo(false);
     }
   };
@@ -145,6 +158,24 @@ export function Dashboard() {
           </div>
 
           <div>
+            <AlertDialog>
+              <AlertDialogTrigger className="bg-white rounded-lg my-5 w-[15rem] h-[5rem]]">
+                View Project Query
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>
+                    Project Summary Used in Query
+                  </AlertDialogTitle>
+                  <AlertDialogDescription>
+                    {summaryData || "Project Query will show here"}
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogAction>Cool</AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
             <Accordion
               className="bg-white rounded-lg my-5"
               type="single"
