@@ -108,9 +108,7 @@ export function Dashboard() {
             Vectorize Your GitHub Repository
           </h2>
           <div className="bg-white shadow-md rounded-lg p-8 mb-8">
-            <h3 className="text-xl font-bold mb-4">
-              Input Feature Requirement
-            </h3>
+            <h3 className="text-xl font-bold mb-4">Input Github Repo</h3>
             <div className="flex items-center space-x-4">
               <input
                 className="flex-1 border border-black rounded-md px-2 py-1"
@@ -130,9 +128,7 @@ export function Dashboard() {
             </div>
           </div>
           <div className="bg-white shadow-md rounded-lg p-8">
-            <h3 className="text-xl font-bold mb-4">
-              Input Project Requirements
-            </h3>
+            <h3 className="text-xl font-bold mb-4">Input Feature</h3>
             <div className="grid my-1">
               <div>
                 <Label htmlFor="project-name">Project Feature</Label>
