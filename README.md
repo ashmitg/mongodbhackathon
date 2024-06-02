@@ -47,8 +47,8 @@ To get started with the Open Source Component Searcher, follow these steps:
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/yourusername/open-source-component-searcher.git
-   cd open-source-component-searcher
+   git clone https://github.com/ashmitg/mongodbhackathon
+   cd mongodbhackathon
    ```
 
 2. **Install Dependencies**:
