@@ -6,6 +6,10 @@ Welcome to the Open Source Component Searcher project! This tool is designed to 
 
 [!Demo](https://github.com/ashmitg/mongodbhackathon/assets/84148720/42df77f9-3952-41bc-8264-95eee42d7dd7)
 
+## RAG Implementation
+
+<img width="740" alt="Screen Shot 2024-06-02 at 11 35 07 AM" src="https://github.com/ashmitg/AiEstate/assets/84148720/6dc4c34d-2b86-4bfa-b59b-6dc44e2b4c7e">
+
 ## Table of Contents
 
 1. [Introduction](#introduction)
